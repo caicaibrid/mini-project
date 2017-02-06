@@ -4,19 +4,26 @@
     <meta charset="UTF-8">
     <title>Title</title>
     <script src="js/jquery.min.js"></script>
-    <script src="js/setForm.js"></script>
+    <script src="js/form.js"></script>
 </head>
 <body>
 
     <form novalidate id="form">
-        用户名 <input type="text" data-key="person.user.laco.name"/>
+        用户名 <input type="text" data-key="person.user.name"/>
         <br>
         密码 <input type="password" data-key="password"/>
         <br>
-        <button type="button">提交</button>
+        <button id="button" type="button">提交</button>
     </form>
 
 
 </body>
-
+<script type="text/javascript">
+    window.onload = function () {
+        document.getElementById("button").onclick = function () {
+            console.log(setForm("#form","data-key"))
+        }
+        getForm("#form",{person:{user:{name:"aaaa123"}},password:"1212"})
+    }
+</script>
 </html>
