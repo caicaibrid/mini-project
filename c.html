@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <div id="c">c.html</div>
+</body>
+<script>
+        window.addEventListener("message",function (e) {
+            console.log(e,"**************")
+            var c = document.getElementsByTagName("div")[0];
+            c.style.color = e.data;
+        },false)
+</script>
+</html>

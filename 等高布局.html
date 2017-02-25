@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .container{
+            position: relative;
+            height: 40px;
+        }
+        .container div{
+            position: absolute;
+            bottom: 0;
+            top:0;
+        }
+        .left{
+            width: 300px;
+            background: #000000;
+            color: #fff;
+        }
+        div.right{
+            left: 300px;
+            width: 300px;
+            background: #ccc;
+        }
+        table{
+            width: 100%;
+        }
+        table,tr,td{
+            border: 1px solid #ccc;
+
+        }
+        tr{
+            position: relative;
+        }
+        table table{
+            display: none;
+            position: absolute;
+            top:100%;
+            left: 0;
+            right: 0;
+            background: #ff0000;
+        }
+        table tr td:hover table{
+            display: block;
+        }
+        ul li{
+            box-sizing: border-box;
+            background: #ffff00;
+            line-height: 40px;
+            margin: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div id="div">
+        昂视
+        <p id="p">啊啊啊</p>
+    </div>
+
+    <ul>
+        <li>a</li>
+        <li>b</li>
+        <li>c</li>
+    </ul>
+    <table border="1px">
+        <tr >
+            <td>
+               qwwq
+            </td>
+            <td>
+                sd
+            </td>
+            <td>
+                <table >
+                    <tr><td>1</td><td>1</td><td>1</td></tr>
+                    <tr><td>2</td><td>1</td><td>1</td></tr>
+                    <tr><td>3</td><td>1</td><td>1</td></tr>
+                </table>
+            </td>
+
+        </tr>
+        <tr >
+            <td>
+                qwwq
+            </td>
+            <td>
+                <table >
+                    <tr><td>1</td><td>1</td><td>1</td></tr>
+                    <tr><td>2</td><td>1</td><td>1</td></tr>
+                    <tr><td>3</td><td>1</td><td>1</td></tr>
+                </table>
+            </td>
+            <td>
+                飒飒
+            </td>
+
+        </tr>
+        <tr >
+            <td>
+                <table >
+                    <tr><td>1</td><td>1</td><td>1</td></tr>
+                    <tr><td>2</td><td>1</td><td>1</td></tr>
+                    <tr><td>3</td><td>1</td><td>1</td></tr>
+                </table>
+            </td>
+            <td>
+                而睡得
+            </td>
+            <td>
+                飒飒
+            </td>
+
+        </tr>
+    </table>
+</body>
+<script>
+
+    var ul = document.getElementsByTagName("ul");
+    var li = ul[0].getElementsByTagName("li");
+    for (var i = 0;i<li.length;i++){
+        (function (i) {
+            li[i].onclick= function () {
+                console.log(this.firstChild.nodeValue,i)
+            }
+        })(i);
+    }
+    var span = document.createElement("span");
+    var text = document.createTextNode("asas");
+    ul[0].appendChild(span.appendChild(text))
+
+
+    /*var div =document.getElementById("div");
+    var p = document.getElementById("p");
+
+    document.addEventListener("click",function () {
+        console.log("document")
+    },true)
+
+    div.addEventListener("click",function () {
+        console.log("div")
+    },true) //事件捕获　addEventListener 为ｔｒｕｅ　先从事件顶层开始捕获，直到到达事件源
+            //事件冒泡　addEventListener 为false 　先从事件源开始触发，然后向上冒泡
+
+    p.addEventListener("click",function () {
+        console.log("p")
+    },false)*/
+
+
+    /*var left = document.getElementById("left");
+    var clone = left.cloneNode(true);
+    var script = document.createElement("script");
+    script.src="js/jquery.js";
+    var head = document.getElementsByTagName("head")[0];
+    head.appendChild(script);
+
+    document.addEventListener("click",function () {
+        console.log(1)
+    })
+    left.addEventListener("click",function (e) {
+        console.log(2)
+
+        window.event.cancelBubble = true //ie阻止冒泡
+        e.stopPropagation();
+        window.event.returnValue = false;//ie阻止默认事件触发
+        e.preventDefault();
+    })
+    left.addEventListener("mouseenter",function (e) {
+        console.log(3)
+    })
+    left.addEventListener("mouseleave",function (e) {
+        console.log(4)
+    })
+
+    if(window.XMLHttpRequest){
+        http = new XMLHttpRequest();
+    }else {
+        http = new ActiveXObject();//兼容ｉｅ
+    }
+
+    http.open("get","./es6.md");
+    http.send();
+    http.onreadystatechange = function () {
+        if(http.readyState==4){
+            if(http.status==200){
+                console.log(http.responseText)
+            }else {
+                console.log(http.status)
+            }
+        }
+    }*/
+
+</script>
+</html>

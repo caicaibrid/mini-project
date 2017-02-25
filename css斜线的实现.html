@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style type="text/css">
+        div{
+            width: 300px;
+            height: 300px;
+            overflow: hidden;
+            border: 1px solid #ff0000;
+            margin: 50px auto;
+            line-height: 120px;
+            position: relative;
+            box-sizing: border-box;
+        }
+        div::before{
+            content: "";
+            position: absolute;
+            width: 100%;
+            height: 150px;
+            border-bottom: 1px solid #000;
+            /*transform: rotateZ(45deg) scale(1.414);*/
+            transform-origin: bottom center;
+            animation: rotate 3s 0.1s ease infinite;
+            box-sizing: border-box;
+        }
+        div::after{
+            content: "";
+            position: absolute;
+            width: 100%;
+            height: 150px;
+            border-bottom: 1px solid #000;
+            /*transform: rotateZ(45deg) scale(1.414);*/
+            transform-origin: bottom center;
+            animation: rotate1 3s 0.1s ease infinite;
+            box-sizing: border-box;
+        }
+        @keyframes rotate1 {
+            0%{
+                transform: rotateZ(0deg) scale(1);
+            }
+            25%{
+                transform: rotateZ(-45deg) scale(1);
+            }
+            50%{
+                transform: rotateZ(-45deg) scale(1);
+            }
+            100%{
+                transform: rotateZ(-45deg) scale(1.414);
+            }
+        }
+        @keyframes rotate {
+            0%{
+                transform: rotateZ(0deg) scale(1);
+            }
+            25%{
+                transform: rotateZ(45deg) scale(1);
+            }
+            50%{
+                transform: rotateZ(45deg) scale(1);
+            }
+            100%{
+                transform: rotateZ(45deg) scale(1.414);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div></div>
+</body>
+</html>
